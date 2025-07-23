@@ -121,6 +121,11 @@ struct arch_domain
 
     /* OSID used by virtual GSX device */
     uint8_t vgsx_osid;
+
+#ifdef CONFIG_VIRTUAL_IOMMU
+    struct list_head viommu_list;     /* List of virtual IOMMUs */
+#endif
+
 }  __cacheline_aligned;
 
 struct arch_vcpu
